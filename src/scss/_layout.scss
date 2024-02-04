@@ -22,6 +22,13 @@ main {
     background: base.$backgroundColor;
 }
 
+/* Om-sida */
+#about img {
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+
 /* Större skärmar - gör menyn som inline */
 @media only screen and (min-width: 1000px) {
     header {
