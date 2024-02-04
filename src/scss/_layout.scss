@@ -1,0 +1,62 @@
+/* Hantera sidans utseende med grid, flexbox, containers osv */
+
+@use "base";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: base.$bodyBackgroundColor;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, sans-serif;
+}
+
+main {
+    width: 80%;
+    margin: 10px auto;
+    background: base.$backgroundColor;
+}
+
+/* Större skärmar - gör menyn som inline */
+@media only screen and (min-width: 1000px) {
+    header {
+        padding: 0 1em;
+        box-shadow: 0 0px 10px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #open-menu {
+        display: none !important;
+    }
+
+    header {
+        position: static;
+    }
+
+    nav {
+        display: block !important;
+        position: static;
+        box-shadow: 0 0px 0px;
+        height: auto;
+        font-size: 1.2em;
+        width: auto;
+    }
+
+    nav ul {
+        height: 100%;
+    }
+
+    nav li {
+        display: inline;
+        padding: 2.6em 0;
+    }
+
+}

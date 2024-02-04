@@ -1,0 +1,10 @@
+/* Variabler och mixins, färgkoder, fontstyling */
+
+$font-stack: Helvetica, sans-serif;
+
+/* Variabler för färger */
+$primary-color: #BAD6EB;
+$backgroundColor: lighten($primary-color, 80%);
+$bodyBackgroundColor: darken($primary-color, 2%);
+$menuColor: desaturate($primary-color, 30%);
+$menuHoverColor: darken($primary-color, 5%);
