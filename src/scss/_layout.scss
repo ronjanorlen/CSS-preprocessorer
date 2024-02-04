@@ -28,7 +28,48 @@ main {
     border: 1px solid #000;
 }
 
+/* Footer */
+footer {
+    background-color: base.$menuColor;
+    font-size: 16px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    flex-shrink: 0;
+}
 
+footer ul {
+    margin-top: 35px;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.links li {
+    list-style-type: none;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.course-info li {
+    list-style-type: none;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.createdBy li {
+    list-style-type: none;
+    text-align: center;
+    line-height: 1.8rem;
+}
 /* Större skärmar - gör menyn som inline */
 @media only screen and (min-width: 1000px) {
     header {
