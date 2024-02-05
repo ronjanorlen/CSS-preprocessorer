@@ -1,4 +1,22 @@
 /*Återanvändning, tex knappar, länkar, formulär */
 @use "base";
 
+h1 {
+    font-size: base.$heading-fontsize;
+    color: base.$font-color;
+    text-align: center;
+}
 
+h2 {
+    font-size: base.$second-heading-fontsize;
+    color: base.$font-color;
+    text-align: center;
+}
+
+p {
+    font-size: base.$paragraph-fontsize;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 80ch;
+    line-height: 1.75rem;
+}

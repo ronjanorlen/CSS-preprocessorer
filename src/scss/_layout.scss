@@ -23,22 +23,6 @@ main {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1 {
-    font-size: base.$heading-fontsize;
-    color: base.$font-color;
-    text-align: center;
-}
-
-h2 {
-    font-size: base.$second-heading-fontsize;
-    color: base.$font-color;
-    text-align: center;
-}
-
-p {
-    font-size: base.$paragraph-fontsize;
-    text-align: center;
-}
 
 /* Design av huvudmeny med nestlad regel */
 header {
@@ -101,7 +85,7 @@ nav {
     display: flex;
     align-items: center;
     padding: 8px 15px;
-    background-color: #B4A79E;
+    background-color: base.$menuColor;
     border: rgb(0, 0, 0) solid 2px;
     cursor: pointer;
 }
@@ -111,7 +95,7 @@ nav {
 }
 
 .menu-btn:hover {
-    background-color: #BBC7A4;
+    background-color: base.$menuHoverColor;
     box-shadow: 0 0px 5px rgba(0, 0, 0, 0.421);
 }
 
@@ -206,6 +190,12 @@ footer ul {
 /* Galleri-sida */
 #gallery {
     margin: 10px 3px;
+
+    img {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
 }
 
 
@@ -235,7 +225,7 @@ footer ul {
         position: static;
         box-shadow: 0 0px 0px;
         height: auto;
-        font-size: 1.2em;
+        font-size: base.$menu-fontsize;
         width: auto;
     }
 
