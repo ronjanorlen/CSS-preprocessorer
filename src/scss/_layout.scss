@@ -1,6 +1,7 @@
 /* Hantera sidans utseende med grid, flexbox, containers osv */
 
 @use "base";
+@use "component";
 
 * {
     box-sizing: border-box;
@@ -20,8 +21,9 @@ main {
     width: 80%;
     margin: 3px auto;
     background: base.$mainbackgroundColor;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    @include component.custom-box-shadow;
 }
+
 
 
 /* Design av huvudmeny med nestlad regel */
@@ -44,7 +46,7 @@ header {
 /* Design av meny för mobilenheter (placeras till höger), med nestlade regler */
 nav {
     background-color: base.$menuColor;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.71);
+    @include component.custom-box-shadow;
     font-size: 1.4em;
     position: absolute;
     right: 0;
@@ -115,6 +117,7 @@ nav {
 .menu-text {
     font-size: 1.2em;
     color: rgb(0, 0, 0);
+
 }
 
 /* Meny knapp, stäng */
@@ -136,6 +139,7 @@ nav {
     transform: rotate(135deg);
     position: relative;
     top: -3px;
+
 }
 
 /* Footer */
@@ -205,7 +209,7 @@ footer ul {
 @media only screen and (min-width: 1000px) {
     header {
         padding: 0 1em;
-        box-shadow: 0 0px 10px;
+        @include component.custom-box-shadow;
     }
 
     .menu-btn {

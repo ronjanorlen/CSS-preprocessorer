@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start</title>
+    <title>Kontakt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
@@ -43,7 +43,20 @@
         
     </header>
     <main>
-        <h1>Startsida</h1>
+        <h1>Kontakta mig</h1>
+        <form>
+            <fieldset>
+              <legend>Kontakta oss</legend><br>
+              <label for="fname">Namn</label>
+              <input type="text" id="fname" name="fname" value="Namn"><br><br>
+              <label for="lname">E-post</label>
+              <input type="text" id="lname" name="lname" value="epost@epost.se"><br><br>
+              <label for="message">Meddelande</label>
+              <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+              <button type="submit" class="send-button">Skicka</button>
+              <button type="submit" class="reset-button">Rensa</button>
+            </fieldset>
+          </form>
         
     </main>
     <footer>

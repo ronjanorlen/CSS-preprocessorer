@@ -21,4 +21,52 @@ p {
     line-height: 1.75rem;
 }
 
-/* Knappar */ 
+/* Mixin för box-shadow */
+@mixin custom-box-shadow {
+    box-shadow: 0px 5px 10px 0px #c5d0df;
+  }
+
+
+/* Kontaktformulär */
+fieldset {
+    border: none;
+
+}
+
+legend {
+    display: none;
+}
+
+/* Stil för etiketter */
+label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Stil för textinput */
+input[type="text"] {
+    width: 30%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Stil för knappar */
+.send-button {
+    background-color: base.$menuHoverColor;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reset-button {
+    @extend .send-button;
+    background-color: #1f3f69;
+}
+.send-button:hover, .reset-button:hover {
+    background-color: base.$primary-link-hover;
+}

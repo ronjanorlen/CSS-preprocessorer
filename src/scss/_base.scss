@@ -26,11 +26,4 @@ $second-heading-fontsize: 24px;
 $paragraph-fontsize: 16px;
 $menu-fontsize: 18px;
 
-/* Mixins */
-@mixin button() {
-    background-color: $primary-color; 
-    border: none;
-    color: white;
-    font-size: 2em;
-}
 
