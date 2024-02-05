@@ -205,6 +205,26 @@ footer ul {
 
 /* Media queries */
 
+/* Mörkt och ljust tema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: base.$bodyBackgroundColor-dark;
+    }
+    main {
+        background-color: base.$mainbackgroundColor-dark;
+    @include component.custom-box-shadow;
+    }
+    header {
+        background-color: base.$menuColor-dark;
+    }
+    nav {
+        background-color: base.$menuColor-dark;
+    }
+    footer {
+        background-color: base.$menuColor-dark;
+    }
+}
+
 /* Större skärmar - gör menyn som inline */
 @media only screen and (min-width: 1000px) {
     header {
