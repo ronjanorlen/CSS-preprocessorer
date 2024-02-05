@@ -3,8 +3,24 @@
 $font-stack: Helvetica, sans-serif;
 
 /* Variabler för färger */
-$primary-color: #BAD6EB;
-$backgroundColor: lighten($primary-color, 80%);
-$bodyBackgroundColor: darken($primary-color, 2%);
+$primary-color: #3b83e2;
+$bodyBackgroundColor: #effafd;
+$mainbackgroundColor: lighten($primary-color, 80%);
 $menuColor: desaturate($primary-color, 30%);
 $menuHoverColor: darken($primary-color, 5%);
+$primary-link-hover: darken($primary-color, 20%);
+
+/* Mörkt tema */
+$primary-color-dark: #3b83e2;
+$bodyBackgroundColor-dark: #effafd;
+$mainbackgroundColor-dark: lighten($primary-color, 80%);
+$menuColor-dark: desaturate($primary-color, 30%);
+$menuHoverColor-dark: darken($primary-color, 5%);
+$primary-link-hover-dark: darken($primary-color, 20%);
+
+/* Fonts */
+$primary-fonts: 'Montserrat', sans-serif;
+$font-color: #000;
+$heading-fontsize: 36px;
+$second-heading-fontsize: 24px;
+$paragraph-fontsize: 16px;
