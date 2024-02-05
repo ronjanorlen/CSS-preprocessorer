@@ -32,6 +32,15 @@ p {
     box-shadow: 0px 5px 10px 0px #c5d0df;
   }
 
+/* Mixin för border på selfie-bild */
+@mixin border-style($rounded: true) {
+    @if $rounded {
+      border-radius: 50%;
+    } @else {
+      border-radius: 0;
+    }
+  }
+
 
 /* Kontaktformulär */
 fieldset {

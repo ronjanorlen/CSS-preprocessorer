@@ -20,6 +20,7 @@ body {
 main {
     width: 80%;
     margin: 3px auto;
+    flex-grow: 1;
     background: base.$mainbackgroundColor;
     @include component.custom-box-shadow;
 }
@@ -183,12 +184,14 @@ footer ul {
 
 /* Om-sida */
 #about img {
-    border-radius: 50%;
-    border: 1px solid #000;
+    @include component.border-style(true);
+    @include component.custom-box-shadow;
+    border: 2px solid #414141;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 /* Galleri-sida */
@@ -212,7 +215,6 @@ footer ul {
     }
     main {
         background-color: base.$mainbackgroundColor-dark;
-    @include component.custom-box-shadow;
     }
     header {
         background-color: base.$menuColor-dark;
@@ -220,6 +222,10 @@ footer ul {
     nav {
         background-color: base.$menuColor-dark;
     }
+    #about img {
+        @include component.border-style(false);
+    }
+    
     footer {
         background-color: base.$menuColor-dark;
     }
