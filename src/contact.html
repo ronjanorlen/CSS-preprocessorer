@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/main.scss">
     <script src="js/main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/41ba6d6515.js" crossorigin="anonymous"></script>
 </head> 
 <body>
     <header>
@@ -32,7 +33,7 @@
                 <span class="menu-text">Stäng</span>
             </button>
             <ul>
-                <li><a href="index.html">Start</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
                 <li><a href="sass.html">SASS</a></li>
                 <li><a href="gallery.html">Galleri</a></li>
                 <li><a href="about.html">Om</a></li>
@@ -44,14 +45,15 @@
     </header>
     <main>
         <h1>Kontakta mig</h1>
+        <h3>Har du frågor om mig som utvecklare eller om denna webbplats?<br>
+        Fyll i formuläret nedan så återkommer jag till dig inom kort!</h3>
         <form>
             <fieldset>
-              <legend>Kontakta oss</legend><br>
-              <label for="fname">Namn</label>
-              <input type="text" id="fname" name="fname" value="Namn"><br><br>
-              <label for="lname">E-post</label>
-              <input type="text" id="lname" name="lname" value="epost@epost.se"><br><br>
-              <label for="message">Meddelande</label>
+              <label for="fname">Namn:</label>
+              <input type="text" id="fname" name="fname"><br><br>
+              <label for="lname">E-post:</label>
+              <input type="text" id="lname" name="lname"><br><br>
+              <label for="message">Meddelande:</label>
               <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
               <button type="submit" class="send-button">Skicka</button>
               <button type="submit" class="reset-button">Rensa</button>
