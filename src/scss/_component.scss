@@ -13,10 +13,14 @@ h2 {
     color: base.$font-color;
     font-weight: 400;
     text-align: center;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 h3 {
     text-align: center;
     font-weight: 400;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 p {
@@ -25,6 +29,8 @@ p {
     margin: 10px auto;
     max-width: 80ch;
     line-height: 1.75rem;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 
 /* Mixin för box-shadow */
@@ -56,7 +62,7 @@ form {
 /* Stil för etiketter */
 label {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 /* Stil för textinput */
