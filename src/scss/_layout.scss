@@ -229,35 +229,20 @@ footer {
     h2 {
         font-size: 1.2em;
     }
+    h3 {
+        font-size: 1em;
+        margin-bottom: 20%;
+    }
     #gallery img, #about img {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
-    #contact-form {
-        flex-direction: column;
-        align-items: center;
-    }
-   label {
-    width: 98%;
-    margin: 10px auto;
-    text-align: center;
-   }
-   input[type="text"] {
-    width: 98%;
-}
-textarea {
-    width: 98%;
-}
-.reset-button{
-    margin-left: 40%;
-    
-}
-.send-button{
-    margin-left: 8%;
-    
-}
+    form {
+        width: 90%;
+        margin-left: 12%;
+      }
 footer {
     flex-direction: column;
     height: 400px;
@@ -272,7 +257,7 @@ footer li {
 /* Tablets */
 @media only screen and (max-width: 601px) and (min-width: 900px) {
     main {
-        width: 90%;
+        width: 80%;
     }
 }
 

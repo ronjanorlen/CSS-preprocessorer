@@ -43,25 +43,33 @@ p {
 
 
 /* Kontaktformulär */
+
 fieldset {
     border: none; 
 }
-
 form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  margin-left: 10%;
+}
+
+/* Meddelande-ruta */
+textarea {
+  width: 80%;
+  height: 100px;
 }
 
 /* Stil för etiketter */
 label {
-    display: block;
+  display: block;
     margin-bottom: 25px;
 }
 
 /* Stil för textinput */
 input[type="text"] {
-    width: 100%;
+    width: 80%;
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -77,6 +85,7 @@ input[type="text"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 8%;
 }
 
 .reset-button {
