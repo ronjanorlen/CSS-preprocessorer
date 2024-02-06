@@ -4,19 +4,13 @@
 h1 {
     font-size: base.$heading-fontsize;
     color: base.$font-color;
-    font-weight: 400;
-    text-align: center;
 }
 
 h2 {
     font-size: base.$second-heading-fontsize;
     color: base.$font-color;
-    font-weight: 400;
-    text-align: center;
-    padding-left: 8%;
-    padding-right: 8%;
 }
-h3 {
+h1, h2, h3 {
     text-align: center;
     font-weight: 400;
     padding-left: 8%;
@@ -26,7 +20,7 @@ h3 {
 p {
     font-size: base.$paragraph-fontsize;
     text-align: center;
-    margin: 10px auto;
+    margin: 40px auto;
     max-width: 80ch;
     line-height: 1.75rem;
     padding-left: 6%;
@@ -38,7 +32,7 @@ p {
     box-shadow: 0px 5px 10px 0px #c5d0df;
   }
 
-/* Mixin för border på selfie-bild */
+/* Mixin och if/else-sats för border på selfie-bild */
 @mixin border-style($rounded: true) {
     @if $rounded {
       border-radius: 50%;
