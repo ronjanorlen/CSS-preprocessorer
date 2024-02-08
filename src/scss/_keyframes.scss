@@ -1,20 +1,36 @@
 
+#skierPic {
+    animation-name: skier;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes skeir {
+    0% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
 #animations h1 {
     font-size: 4em;
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-    animation-name: shadow-text;
+    margin-bottom: 10%;
+    text-shadow: 8px 8px 4px black, 10px 0 35px blue, 10px 10px 15px darkblue;
+    animation-name: rotation;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-
+    animation-direction: alternate;
   }
 
-  @keyframes shadow-text {
+  @keyframes rotation {
     from {
-    
+        transform: rotate(-30deg);
     }
     to {
-
+        transform: rotate(30deg);
     }
    
   }
@@ -25,6 +41,8 @@
     align-items: center;
     margin: 0 auto;
     animation-name: slideShow1;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
     animation-duration: 4s;
     animation-iteration-count: 2;
     animation-direction: alternate;
@@ -34,7 +52,9 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    animation-name: slideShowLeft;
+    animation-name: slideShow2;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
     animation-duration: 4s;
     animation-iteration-count: 2;
     animation-direction: alternate;
@@ -42,7 +62,7 @@
 }
 
 @keyframes slideShow1 {
-    0% {
+    0%, 100% {
         transform: translate(0px, 0px);
     }
     20% {
@@ -57,15 +77,12 @@
     80% {
         transform: translate(-300px, 0px);
     }
-    100% {
-        transform: translate(0px, 0px);
-    }
     
 
 }
 
-@keyframes slideShowLeft {
-    0% {
+@keyframes slideShow2 {
+    0%, 100% {
         transform: translate(0px, 0px);
     }
     20% {
@@ -79,9 +96,6 @@
     }
     80% {
         transform: translate(300px, 0px);
-    }
-    100% {
-        transform: translate(0px, 0px);
     }
     
 }
