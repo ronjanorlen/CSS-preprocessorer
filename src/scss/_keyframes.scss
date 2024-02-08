@@ -1,16 +1,32 @@
+@use "base";
 
 #skierPic {
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: hidden;
     animation-name: skier;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    animation-duration: 8s;
 }
 
-@keyframes skeir {
+@keyframes skier {
     0% {
-        transform: rotate(-30deg);
+        transform: translate(10px, 0px);
+    }
+    25% {
+        transform: translate(-800px, 100px);
+        
+    }
+    50% {
+        transform: translate(0px, 200px);
+        
+    }
+    75% {
+        transform: translate(-400px, 300px);
+        
     }
     100% {
-        transform: rotate(30deg);
+        transform: translate(0px, 400px);
+        
     }
 }
 
@@ -18,19 +34,18 @@
     font-size: 4em;
     color: white;
     margin-bottom: 10%;
-    text-shadow: 8px 8px 4px black, 10px 0 35px blue, 10px 10px 15px darkblue;
-    animation-name: rotation;
-    animation-duration: 4s;
+    animation-name: shadow;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: alternate-reverse;
   }
 
-  @keyframes rotation {
+  @keyframes shadow {
     from {
-        transform: rotate(-30deg);
+        text-shadow: 1px 1px 1px black, 1px 1px 1px blue, 1px 1px 1px darkblue;
     }
     to {
-        transform: rotate(30deg);
+        text-shadow: 8px 8px 4px black, 10px 10px 35px blue, 10px 10px 15px darkblue;
     }
    
   }
@@ -100,31 +115,29 @@
     
 }
 
-
-
 .animation-btn {
     margin: 1em auto 0;
     padding: 1em 2em;
+    width: 200px;
+    height: 100px;
     display: block;
-    border: 0;
+    border: 2px solid base.$menuHoverColor;
+    border-radius: 50%;
     font-size: 1.5rem;
-    background: blue;
+    background: base.$primary-color-dark;
     color: white;
-    animation-name: party-btn;
+    transition-property: width, height;
+    transition-duration: 2s;
+    
 }
-
 .animation-btn:hover {
     cursor: pointer;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(136, 18, 136);
+    border-radius: 20%;
 }
 
-@keyframes party-btn {
-    from {
-
-    }
-    to {
-
-    }
-}
 
 
 
