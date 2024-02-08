@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animationer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scss/main.scss">
+    <script src="js/main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/41ba6d6515.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="images/logotyp.png" alt="Logotyp"></a></div>
+        <!-- Meny knapp för att öppna mobilmenyn-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <!-- navigering -->
+        <nav id="nav-menu">
+            <!-- Knapp som visas om mobilmenyn är utfälld -->
+            <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng</span>
+            </button>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="sass.html">SASS</a></li>
+                <li><a href="animations.html">Animationer</a></li>
+                <li><a href="gallery.html">Galleri</a></li>
+                <li><a href="about.html">Om</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+        <div id="brödsmulor">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Startsida</a></li>
+                <li>Animationer</li>
+              </ul>
+        </div>
+        <h1>Animationer</h1>
+        
+        <p>
+        </p>
+    </main>
+    <footer>
+        <ul class="links">
+            <li><a href="about.html">Om</a></li>
+            <li><a href="gallery.html">Galleri</a></li>
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <ul class="course-info">
+            <li>Kurs: DT211G</li>
+            <li>Frontendbaserad Webbutveckling</li>
+        </ul>
+        <ul class="createdBy">
+            <li>Skapad av:</li>
+            <li>Ronja Norlén</li>
+        </ul>
+    </footer>
+    
+</body>
+</html>
