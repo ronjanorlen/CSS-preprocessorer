@@ -1,34 +1,5 @@
 @use "base";
 
-#skierPic {
-    display: flex;
-    justify-content: flex-end;
-    overflow-x: hidden;
-    animation-name: skier;
-    animation-duration: 8s;
-}
-
-@keyframes skier {
-    0% {
-        transform: translate(10px, 0px);
-    }
-    25% {
-        transform: translate(-800px, 100px);
-        
-    }
-    50% {
-        transform: translate(0px, 200px);
-        
-    }
-    75% {
-        transform: translate(-400px, 300px);
-        
-    }
-    100% {
-        transform: translate(0px, 400px);
-        
-    }
-}
 
 #animations h1 {
     font-size: 4em;
