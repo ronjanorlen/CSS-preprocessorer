@@ -193,6 +193,71 @@ footer {
     }
 }
 
+/* Animations-sida */
+
+#img-animation {
+    overflow: hidden;
+  }
+  
+#animations h1 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 10%;
+    animation-name: shadow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+
+
+  #img1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: slideShow1;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+#img2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: slideShow2;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+
+.animation-btn {
+    margin: 1em auto 0;
+    padding: 1em 2em;
+    width: 200px;
+    height: 100px;
+    display: block;
+    border: 2px solid base.$menuHoverColor;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    background: base.$primary-color-dark;
+    color: white;
+    transition-property: width, height;
+    transition-duration: 2s;
+    
+}
+.animation-btn:hover {
+    cursor: pointer;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(136, 18, 136);
+    border-radius: 20%;
+}
+
 /* Media queries */
 
 /* Mörkt och ljust tema */
