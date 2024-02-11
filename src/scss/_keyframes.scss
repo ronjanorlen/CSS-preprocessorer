@@ -47,3 +47,21 @@
     }
     
 }
+
+@keyframes mobile-flip1 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes mobile-flip2 {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
+}
