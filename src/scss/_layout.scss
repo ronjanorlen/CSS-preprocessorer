@@ -117,13 +117,17 @@ nav {
 .menu-text {
     font-size: 1.2em;
     color: rgb(0, 0, 0);
-
 }
 
 /* Meny knapp, stäng */
 .close {
     margin: 1em 1.5em;
     padding: 10px 15px;
+    animation-name: text-flip;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
 }
 
 /* Gör två streck till ett kryss */
@@ -234,7 +238,6 @@ footer {
     animation-iteration-count: 2;
     animation-direction: alternate;
 }
-
 .animation-btn {
     margin: 1em auto 0;
     padding: 1em 2em;
@@ -256,6 +259,9 @@ footer {
     height: 200px;
     background-color: rgb(136, 18, 136);
     border-radius: 20%;
+}
+.animation-btn2 {
+    display: none;
 }
 
 /* Media queries */
@@ -353,26 +359,32 @@ textarea {
 }
 
 .animation-btn {
+    display: none;
+}
+
+.animation-btn2 {
     margin: 1em auto 0;
     padding: 1em 2em;
-    width: 100px;
-    height: 80px;
-    display: block;
-    border-radius: 0%;
-    border: 2px solid base.$menuHoverColor;
-    font-size: 1.5rem;
-    background: base.$primary-color-dark;
-    color: white;
-    transition-property: width, height;
-    transition-duration: 2s;
-    
-}
-.animation-btn:hover {
-    cursor: pointer;
     width: 200px;
     height: 100px;
-    background-color: rgb(136, 18, 136);
-    border-radius: 20%;
+    display: block;
+    border: 2px solid base.$menuHoverColor;
+    border-radius: 50%;
+    font-size: 1rem;
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    color: white;
+    transition-property: width, height, font-size;
+    transition-duration: 1s;
+    
+}
+.animation-btn2:hover {
+    cursor: pointer;
+    width: 0px;
+    height: 0px;
+    background-color: base.$primary-color-dark;
+    border-radius: 100%;
+    font-size: 0px;
+    border: none;
 }
 
 footer {
@@ -387,9 +399,36 @@ footer li {
 }
 
 /* Tablets */
-@media only screen and (max-width: 601px) and (min-width: 900px) {
+@media only screen and (min-width: 601px) and (max-width: 900px) {
     main {
         width: 90%;
+    }
+    .animation-btn {
+        display: none;
+    }
+    
+    .animation-btn2 {
+        margin: 1em auto 0;
+        padding: 1em 2em;
+        width: 200px;
+        height: 100px;
+        display: block;
+        border: 2px solid base.$menuHoverColor;
+        font-size: 1rem;
+        background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+        color: white;
+        transition-property: width, height, font-size;
+        transition-duration: 1s;
+        
+    }
+    .animation-btn2:hover {
+        cursor: pointer;
+        width: 0px;
+        height: 0px;
+        background-color: base.$primary-color-dark;
+        border-radius: 100%;
+        font-size: 0px;
+        border: none;
     }
 }
 
@@ -429,6 +468,10 @@ footer li {
     nav li {
         display: inline;
         padding: 2.6em 0;
+    }
+
+    .animation-btn2 {
+        display: none;
     }
 
 }

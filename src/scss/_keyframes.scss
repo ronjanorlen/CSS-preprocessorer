@@ -65,3 +65,12 @@
         transform: rotateX(180deg);
     }
 }
+
+@keyframes text-flip {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
+}
