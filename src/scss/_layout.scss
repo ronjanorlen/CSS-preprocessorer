@@ -310,12 +310,7 @@ footer {
         align-items: center;
         width: 100%;
     }
-<<<<<<< HEAD
-    form {
-        width: 100%;
-        margin-left: 12%;
-      }
-=======
+
     #contact-form {
         flex-direction: column;
         align-items: center;
@@ -330,14 +325,6 @@ footer {
 }
 textarea {
     width: 98%;
-}
-.reset-button{
-    margin-left: 40%;
-    
-}
-.send-button{
-    margin-left: 8%;
-    
 }
 
 #animations h1 {
@@ -397,7 +384,6 @@ textarea {
     border: none;
 }
 
->>>>>>> development
 footer {
     flex-direction: column;
     height: 500px;
