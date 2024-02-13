@@ -151,7 +151,7 @@ footer {
     background-color: base.$menuColor;
     font-size: base.$paragraph-fontsize;
     width: 100%;
-    height: 180px;
+    height: 220px;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
@@ -239,7 +239,7 @@ footer {
     animation-direction: alternate;
 }
 .animation-btn {
-    margin: 1em auto 0;
+    margin: 1em auto 1em;
     padding: 1em 2em;
     width: 200px;
     height: 100px;
@@ -363,7 +363,7 @@ textarea {
 }
 
 .animation-btn2 {
-    margin: 1em auto 0;
+    margin: 1em auto 1em;
     padding: 1em 2em;
     width: 200px;
     height: 100px;
@@ -389,7 +389,7 @@ textarea {
 
 footer {
     flex-direction: column;
-    height: 400px;
+    height: 500px;
 }
 
 footer li {
@@ -399,7 +399,7 @@ footer li {
 }
 
 /* Tablets */
-@media only screen and (min-width: 601px) and (max-width: 900px) {
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
     main {
         width: 90%;
     }
@@ -408,7 +408,7 @@ footer li {
     }
     
     .animation-btn2 {
-        margin: 1em auto 0;
+        margin: 1em auto 1em;
         padding: 1em 2em;
         width: 200px;
         height: 100px;
@@ -430,11 +430,36 @@ footer li {
         font-size: 0px;
         border: none;
     }
+    #img1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        animation-name: tablet-slideshow1;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+        animation-duration: 3s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+    }
+    #img2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        animation-name: tablet-slideshow2;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+        animation-duration: 3s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+    }
+    
 }
 
 
 /* Större skärmar - gör menyn som inline */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1001px) {
     header {
         padding: 0 1em;
         @include component.custom-box-shadow;

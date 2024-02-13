@@ -48,6 +48,43 @@
     
 }
 
+@keyframes tablet-slideshow1 {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(180px, 0px);
+    }
+    40% {
+        transform: translate(180px, 410px);
+    }
+    60% {
+        transform: translate(-180px, 410px);
+    }
+    80% {
+        transform: translate(-180px, 0px);
+    }
+    
+}
+
+@keyframes tablet-slideshow2 {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(-180px, 0px);
+    }
+    40% {
+        transform: translate(-180px, -410px);
+    }
+    60% {
+        transform: translate(180px, -410px);
+    }
+    80% {
+        transform: translate(180px, 0px);
+    }
+}
+
 @keyframes mobile-flip1 {
     from {
         transform: rotateY(0deg);
