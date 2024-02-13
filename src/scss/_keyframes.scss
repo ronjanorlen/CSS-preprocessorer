@@ -1,0 +1,113 @@
+@use "base";
+
+
+  @keyframes shadow {
+    from {
+        text-shadow: 1px 1px 1px black, 1px 1px 1px blue, 1px 1px 1px darkblue;
+    }
+    to {
+        text-shadow: 8px 8px 4px black, 10px 10px 35px blue, 10px 10px 15px darkblue;
+    }
+   
+  }
+
+@keyframes slideShow1 {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(300px, 0px);
+    }
+    40% {
+        transform: translate(300px, 410px);
+    }
+    60% {
+        transform: translate(-300px, 410px);
+    }
+    80% {
+        transform: translate(-300px, 0px);
+    }
+    
+}
+@keyframes slideShow2 {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(-300px, 0px);
+    }
+    40% {
+        transform: translate(-300px, -410px);
+    }
+    60% {
+        transform: translate(300px, -410px);
+    }
+    80% {
+        transform: translate(300px, 0px);
+    }
+    
+}
+
+@keyframes tablet-slideshow1 {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(180px, 0px);
+    }
+    40% {
+        transform: translate(180px, 410px);
+    }
+    60% {
+        transform: translate(-180px, 410px);
+    }
+    80% {
+        transform: translate(-180px, 0px);
+    }
+    
+}
+
+@keyframes tablet-slideshow2 {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(-180px, 0px);
+    }
+    40% {
+        transform: translate(-180px, -410px);
+    }
+    60% {
+        transform: translate(180px, -410px);
+    }
+    80% {
+        transform: translate(180px, 0px);
+    }
+}
+
+@keyframes mobile-flip1 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes mobile-flip2 {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes text-flip {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
+}

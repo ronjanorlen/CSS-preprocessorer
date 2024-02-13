@@ -117,13 +117,17 @@ nav {
 .menu-text {
     font-size: 1.2em;
     color: rgb(0, 0, 0);
-
 }
 
 /* Meny knapp, stäng */
 .close {
     margin: 1em 1.5em;
     padding: 10px 15px;
+    animation-name: text-flip;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
 }
 
 /* Gör två streck till ett kryss */
@@ -147,7 +151,7 @@ footer {
     background-color: base.$menuColor;
     font-size: base.$paragraph-fontsize;
     width: 100%;
-    height: 180px;
+    height: 220px;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
@@ -193,6 +197,73 @@ footer {
     }
 }
 
+/* Animations-sida */
+
+#img-animation {
+    overflow: hidden;
+  }
+
+#animations h1 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 10%;
+    animation-name: shadow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+
+
+  #img1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: slideShow1;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+#img2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: slideShow2;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+.animation-btn {
+    margin: 1em auto 1em;
+    padding: 1em 2em;
+    width: 200px;
+    height: 100px;
+    display: block;
+    border: 2px solid base.$menuHoverColor;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    background: base.$primary-color-dark;
+    color: white;
+    transition-property: width, height;
+    transition-duration: 2s;
+    
+}
+.animation-btn:hover {
+    cursor: pointer;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(136, 18, 136);
+    border-radius: 20%;
+}
+.animation-btn2 {
+    display: none;
+}
+
 /* Media queries */
 
 /* Mörkt och ljust tema */
@@ -212,7 +283,7 @@ footer {
     #about img {
         @include component.border-style(false);
     }
-    
+
     footer {
         background-color: base.$menuColor-dark;
     }
@@ -239,13 +310,97 @@ footer {
         align-items: center;
         width: 100%;
     }
+<<<<<<< HEAD
     form {
         width: 100%;
         margin-left: 12%;
       }
+=======
+    #contact-form {
+        flex-direction: column;
+        align-items: center;
+    }
+   label {
+    width: 98%;
+    margin: 10px auto;
+    text-align: center;
+   }
+   input[type="text"] {
+    width: 98%;
+}
+textarea {
+    width: 98%;
+}
+.reset-button{
+    margin-left: 40%;
+    
+}
+.send-button{
+    margin-left: 8%;
+    
+}
+
+#animations h1 {
+    font-size: 3em;
+}
+#img1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: mobile-flip1;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+}
+#img2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: mobile-flip2;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+}
+
+.animation-btn {
+    display: none;
+}
+
+.animation-btn2 {
+    margin: 1em auto 1em;
+    padding: 1em 2em;
+    width: 200px;
+    height: 100px;
+    display: block;
+    border: 2px solid base.$menuHoverColor;
+    border-radius: 50%;
+    font-size: 1rem;
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    color: white;
+    transition-property: width, height, font-size;
+    transition-duration: 1s;
+    
+}
+.animation-btn2:hover {
+    cursor: pointer;
+    width: 0px;
+    height: 0px;
+    background-color: base.$primary-color-dark;
+    border-radius: 100%;
+    font-size: 0px;
+    border: none;
+}
+
+>>>>>>> development
 footer {
     flex-direction: column;
-    height: 400px;
+    height: 500px;
 }
 
 footer li {
@@ -255,15 +410,67 @@ footer li {
 }
 
 /* Tablets */
-@media only screen and (max-width: 601px) and (min-width: 900px) {
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
     main {
         width: 80%;
     }
+    .animation-btn {
+        display: none;
+    }
+    
+    .animation-btn2 {
+        margin: 1em auto 1em;
+        padding: 1em 2em;
+        width: 200px;
+        height: 100px;
+        display: block;
+        border: 2px solid base.$menuHoverColor;
+        font-size: 1rem;
+        background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+        color: white;
+        transition-property: width, height, font-size;
+        transition-duration: 1s;
+        
+    }
+    .animation-btn2:hover {
+        cursor: pointer;
+        width: 0px;
+        height: 0px;
+        background-color: base.$primary-color-dark;
+        border-radius: 100%;
+        font-size: 0px;
+        border: none;
+    }
+    #img1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        animation-name: tablet-slideshow1;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+        animation-duration: 3s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+    }
+    #img2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        animation-name: tablet-slideshow2;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+        animation-duration: 3s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+    }
+    
 }
 
 
 /* Större skärmar - gör menyn som inline */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1001px) {
     header {
         padding: 0 1em;
         @include component.custom-box-shadow;
@@ -297,6 +504,10 @@ footer li {
     nav li {
         display: inline;
         padding: 2.6em 0;
+    }
+
+    .animation-btn2 {
+        display: none;
     }
 
 }

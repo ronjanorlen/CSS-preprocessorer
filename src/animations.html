@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start</title>
+    <title>Animationer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/main.scss">
     <script src="js/main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/41ba6d6515.js" crossorigin="anonymous"></script>
-</head> 
+</head>
 <body>
     <header>
         <div class="logo"><a href="index.html"><img src="images/logotyp.png" alt="Logotyp"></a></div>
@@ -48,24 +48,33 @@
     <main>
         <div id="brödsmulor">
             <ul class="breadcrumb">
-                <li>Startsida</li>
+                <li><a href="index.html">Startsida</a></li>
+                <li>Animationer</li>
               </ul>
         </div>
-        <h1>Välkommen</h1>
-        <h2>Detta är resultatet av moment 3 i kursen Frontendbaserad Webbutveckling!</h2>
+        <div id="animations">
+            
+        <h1>Animationer</h1>
+        <div id="img-animation">
+            <div id="img1">
+            <picture>
+                <source srcset="images/cykling.jpg?as=webp&width=300" type="image/webp">
+            <img src="images/cykling.jpg" alt="En person står med en cykel på ett fjäll">
+            </picture>
+        </div>
+        <div id="img2">
+            <picture>
+                <source srcset="images/cykling2.jpg?as=webp&width=300" type="image/webp">
+            <img src="images/cykling2.jpg" alt="En person med cykel pekar på något">
+            </picture>
+        </div>
+        </div>
+        <input type="submit" value="Hover me!" class="animation-btn">
+        <input type="submit" value="Click for party-trick!" class="animation-btn2">
         
-        <p>För denna uppgift har vi fått börja använda CSS-preprocessorer samt fortsatt jobba med automatisering och optimering av 
-webbplatser. <br>
-<br>
-Vill du veta hur min upplevlese av att använda Sass för första gången var? <br>
-Då kan du läsa mer om det genom att <a href="sass.html">klicka här</a> <i class="fa-solid fa-up-right-from-square"></i>. <br>
-<br>
-Är du kanske nyfiken på vem det är som har byggt denna webbplats? <br>
-Då ska du gå till <a href="about.html" target="_blank">denna sida</a> <i class="fa-solid fa-up-right-from-square"></i>. <br>
-<br>
-Eller har du frågor om mig eller detta projekt? <br>
-Då kan du använda <a href="contact.html" target="_blank">kontaktformuläret</a> <i class="fa-solid fa-up-right-from-square"></i>.</p>
-        
+    
+        </div>
+
     </main>
     <footer>
         <ul class="links">
