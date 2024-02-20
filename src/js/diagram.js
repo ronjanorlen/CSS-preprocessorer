@@ -2,6 +2,7 @@
 // Stapeldiagram = namn på kurs + totalt antal sökande, 6 mest sökta kurserna
 //Cirkeldiagram = 5 mest sökta programmen på miun ht23, namn och program
 
+import Chart from 'chart.js/auto';
 // Hämta data från webbtjänst
 
 const url = "https://studenter.miun.se/~mallar/dt211g/";
@@ -31,17 +32,42 @@ async function init () {
     }
 }
 
-function displayCourses(courses) {
-    const coursesEl = document.getElementById("myChart");
+function displayCourses(data) {
+    
+    let courseNames = [];
+    let applicantsTotals = [];
 
     // Loopa igenom och skriv ut
-    courses.forEach((course) => {
-        coursesEl.innerHTML += `
-       <p>${course.name}</p>
-       <p>${course.admissionRound}</p>
-       <p>${course.applicantsTotal}</p>
-        `;
+    data.forEach((course) => {
+        courseNames.push(course.name);
+        applicantsTotals.push(course.applicantsTotal);
     });
+
+    // Diagram //
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: courseNames,
+        datasets: [{
+            label: 'Mest sökta kurser',
+            data: applicantsTotals,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)', // Bakgrundsfärg för staplarna
+                borderColor: 'rgba(54, 162, 235, 1)', // Kantfärg för staplarna
+                borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true // Y-axeln börjar vid noll
+            }
+        }
+    }
+});
+
 }
 
 
