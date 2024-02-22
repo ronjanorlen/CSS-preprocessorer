@@ -1,4 +1,3 @@
-"use strict";
 // Stapeldiagram = namn på kurs + totalt antal sökande, 6 mest sökta kurserna
 //Cirkeldiagram = 5 mest sökta programmen på miun ht23, namn och program
 
@@ -122,4 +121,3 @@ new Chart(ctx, {
 });
 
 }
-
