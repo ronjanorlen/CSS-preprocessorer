@@ -55,7 +55,7 @@ function displayCourses(data) {
     let courseNameAdjusted = courseNames.map(label => label.split(' '));
 
     // Stapel-diagram 
-    Chart.defaults.font.size = 18;
+    Chart.defaults.font.size = 14;
     const ctx = document.getElementById('courseChart');
 
      // Kontrollera skärmens bredd
@@ -63,7 +63,7 @@ function displayCourses(data) {
 
      // Bestäm om x-axeln ska visas beroende på skärmens bredd
      let xAxisDisplay = true;
-     if (screenWidth < 600) {
+     if (screenWidth < 700) {
          xAxisDisplay = false;
      }
 
