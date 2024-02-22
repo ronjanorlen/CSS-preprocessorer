@@ -1,6 +1,6 @@
 "use strict";
 
-// Variebel för att skriva ut karta på webbplats
+
 let map = L.map('map');
 map.setView([51.505, -0.09], 13);
 
@@ -9,19 +9,34 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+L.Control.geocoder().addTo(map);
+
+
 // Hämta användarens plats
 navigator.geolocation.watchPosition(success, error);
 
+let marker, circle, zoomed; 
+
 function success(pos) {
 
-    let lat = pos.coords.latitude;
-    let lng = pos.coords.longitude;
-    let accuracy = pos.coords.accuracy;
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = pos.coords.accuracy;
 
-    let marker = L.marker([lat, lng]).addTo(map);
-    let circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+    // Om användaren flyttar på sig, uppdatera cirkel och pil till ny plats
+    if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+    }
 
-    map.fitBounds(circle.getBounds());
+    marker = L.marker([lat, lng]).addTo(map);
+    circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+
+    if (!zoomed) {
+       zoomed = map.fitBounds(circle.getBounds());
+    }
+    
+    map.setView([lat, lng]);
 
 }
 
