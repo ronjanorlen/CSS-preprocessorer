@@ -34,6 +34,10 @@ function displayCourses(data) {
         return course.type.includes("Kurs");
     });
 
+     // Filtrera ut kurser för HT2023
+     data = data.filter((course) => {
+        return course.admissionRound.includes("HT2023");
+    });
     // Sortera antal sökande på kurserna
     data.sort((a, b) => a.applicantsTotal - b.applicantsTotal).reverse();
     data = data.slice(0, 6);
@@ -92,7 +96,6 @@ function displayCourses(data) {
             }]
         },
         options: {
-            maintainAspectRatio: false,
             plugins: {
                 tooltip: {
                     callbacks: {
@@ -126,6 +129,11 @@ function displayPrograms(data) {
     data = data.filter((program) => {
         return program.type.includes("Program");
     });
+    // Filtrera ut HT2023
+    data = data.filter((program) => {
+        return program.admissionRound.includes("HT2023");
+    });
+    
 
     // Sortera antal sökande på kurserna
     data.sort((a, b) => a.applicantsTotal - b.applicantsTotal).reverse();
