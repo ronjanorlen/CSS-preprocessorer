@@ -47,14 +47,26 @@ function displayCourses(data) {
         applicantsTotals.push(course.applicantsTotal);
     });
 
+    // Radbrytning för kursnamn
+    let courseNameAdjusted = courseNames.map(label => label.split(' '));
+
     // Diagram //
-    Chart.defaults.font.size = 14;
+    Chart.defaults.font.size = 18;
     const ctx = document.getElementById('courseChart');
+
+     // Kontrollera skärmens bredd
+     const screenWidth = window.innerWidth;
+
+     // Bestäm om x-axeln ska visas beroende på skärmens bredd
+     let xAxisDisplay = true;
+     if (screenWidth < 600) {
+         xAxisDisplay = false;
+     }
 
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: courseNames,
+            labels: courseNameAdjusted,
             datasets: [{
                 label: 'Mest sökta kurser',
                 data: applicantsTotals,
@@ -80,24 +92,31 @@ function displayCourses(data) {
             }]
         },
         options: {
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        // Ta bort , mellan orden i kursnamn vid hovring på stapel
+                       title: (context) => {
+                        return context [0].label.replaceAll(',', ' '); 
+                       }     
+                    }
+                }
+            },
             scales: {
                 y: {
                     beginAtZero: true // Y-axeln börjar vid noll
                 },
                 x: {
                     ticks: {
-                        autoSkip: false, // Förhindrar att tick labels försvinner
-                        maxRotation: 50, // Roterar texten 0 grader (rakt ned)
-                        minRotation: 50, // Roterar texten 0 grader (rakt ned)
+                        autoSkip: false,
+                        display: xAxisDisplay // Kontrollera om x-axeln ska visas eller inte
                     }
                 }
             }
         }
-    });
-
+    });  
 }
-
-
 
 // Program
 
