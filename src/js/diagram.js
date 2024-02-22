@@ -54,7 +54,7 @@ function displayCourses(data) {
     // Radbrytning för kursnamn
     let courseNameAdjusted = courseNames.map(label => label.split(' '));
 
-    // Diagram //
+    // Stapel-diagram 
     Chart.defaults.font.size = 18;
     const ctx = document.getElementById('courseChart');
 
@@ -148,7 +148,7 @@ function displayPrograms(data) {
         applicantsTotals.push(program.applicantsTotal);
     });
 
-    // Diagram //
+    //Cirkel-diagram //
 
     const ctx = document.getElementById('programChart');
 
