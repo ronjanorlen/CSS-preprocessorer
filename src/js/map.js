@@ -1,34 +1,40 @@
 "use strict";
 
-
-// let map = L.map('map');
-//map.setView([51.505, -0.09], 13);
-
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-   // maxZoom: 19,
-   // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-//}).addTo(map);
-
-// Karta med start i duved (där jag bor)
-let map = L.map('map').setView([63.39164300, 12.92130450],13);
-
-// Markör
-let marker;
-marker = L.marker([lat, lng]).addTo(map);
-
+// Karta med start på nollställda koordinater för att istället hämta användarens plats med geolocation
+let map = L.map('map').setView([0, 0], 13);
 
 // Visa karta
-
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 14,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-// Variabler för sökruta
+// Hämta användarens plats och markera var den befinner sig, lyckad eller inte 
+navigator.geolocation.watchPosition(success, error);
+let marker;
 
-const searchBox = document.getElementById('search');  // För själva sökrutan
-const searchButton = document.getElementById('search-button'); // Knapp för att söka
-const searchResult = document.getElementById('searchResult'); // Sökresultat
+// Funktion för lyckad hämtning av användarens plats
+function success(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    marker = L.marker([lat, lon]).addTo(map); 
+    map.setView([lat, lon]);
+}
+
+//Funktion om hämtning av användarens plats ej lyckas
+function error(err) {
+    if (err.code === 1) {
+        alert("Vänligen godkänd geolocation access");
+    } else {
+        alert("Kan inte hämta nuvarande plats");
+    }
+}
+
+// Variabler för sökruta
+const searchBox = document.getElementById('search'); 
+const searchButton = document.getElementById('search-button'); 
+const searchResult = document.getElementById('searchResult'); 
 
 // Eventlyssnare för klick på sök-knapp
 searchButton.addEventListener('click', findLocation);
@@ -36,97 +42,63 @@ searchButton.addEventListener('click', findLocation);
 
 // Fetch-anrop till Nominatim API
 async function findLocation() {
-    const searchFor = searchBox.value;
-    const apiURL = 'https://nominatim.openstreetmap.org/search?format=json&q=' + (searchFor);
+    const searchFor = searchBox.value; // Variabel för sökrutan + det användaren sökt efter
+    const apiURL = `https://nominatim.openstreetmap.org/search?format=json&q=${searchFor}`; // Hämta API + sökning
 
     try {
         const response = await fetch(apiURL);
         const data = await response.json();
-        // Ta bort sen
-        console.log(data);
-        // Ta med resultat till annan funktion för utskrift
+        
+        // Ta med data till ny funktion
         showLocation(data);
+        // Om något blir fel vid anrop
     } catch (error) {
         console.error('Fel vid inmatning' + error);
-        searchResult.innerHTML = 'Nu blev det tok';
+        searchResult.innerHTML = 'Nu blev det tokigt';
     }
 }
 
-// Funktion för utskrift
+// Funktion för utskrift med info från tidigare funktion
 function showLocation(data) {
     searchResult.innerHTML = "";
 
-    if(data.length > 0) {
-        //Skapa li-element för varje resultat
+    if (data.length > 0) {
+        //Loopa igenom resultat och skapa list-element för varje resultat
         data.forEach((result) => {
             const listItem = document.createElement('li');
 
-            listItem.setAttribute('data-lat', result.lat); // Lagra latitud
-            listItem.setAttribute('data-lng', result.lng); // Lagra longitud
-            const textString = document.createTextNode(result.display_name); // Skapa textnod med namn
+            // Lagra latitude och longitude, skapa textnod
+            listItem.setAttribute('data-lat', result.lat); 
+            listItem.setAttribute('data-lon', result.lon); 
+            const textString = document.createTextNode(result.display_name); 
 
-            // Lägg till info i listItem och visa i lista
+            // Lägg till resultat 
             listItem.appendChild(textString);
             searchResult.appendChild(listItem);
 
-            // Eventlyssnare för klick på resultat
-            listItem.addEventListener('click', (e) => {
-                const lat = e.target.dataset.lat; // Ta med latidude
-                const lng = e.target.dataset.lng; // Ta med longitude
-                moveMarker(lat, lng); // Flytta markören till den valda platsen
-            })
-        })
+            // Vid klick på namn, hämta latitude och longitude och flytta markör till ny plats
+            listItem.addEventListener('click', () => {
+                const lat = listItem.dataset.lat; 
+                const long = listItem.dataset.lon; 
+                moveMarker(lat, long); 
+            });
+        });
+    } else { // Om sökning inte hittas
+        searchResult.innerHTML = 'Kunde inte hitta angiven plats';
     }
 }
 
 // Funktion för att flytta markören till vald plats
-function moveMarker(lat, lng) {
+function moveMarker(lat, long) {
+
     // Ta bort befintlig markör om det finns en
     if (marker) {
         map.removeLayer(marker);
     }
-    
     // Skapa ny markör och flytta till vald plats
-    marker = L.marker([lat, lng]).addTo(map);
-    map.setView([lat, lng], 13); // Justera vyn för att centrera markören
+    marker = L.marker([lat, long]).addTo(map);
+    map.flyTo([lat, long], 13);
 }
 
 
 
-// Hämta användarens plats
-// navigator.geolocation.watchPosition(success, error);
-
-// let marker, circle, zoomed; 
-
-
-// function success(pos) {
-
- //   const lat = pos.coords.latitude;
- //   const lng = pos.coords.longitude;
- //   const accuracy = pos.coords.accuracy;
-
-    // Om användaren flyttar på sig, uppdatera cirkel och pil till ny plats
-   // if (marker) {
-    //    map.removeLayer(marker);
-     //   map.removeLayer(circle);
-  //  }
-
- //   marker = L.marker([lat, lng]).addTo(map);
- //   circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
-
-   // if (!zoomed) {
-    //   zoomed = map.fitBounds(circle.getBounds());
-  //  }
-    
-  //  map.setView([lat, lng]);
-
-// }
-
-function error (err) {
-
-    if (err.code === 1) {
-        alert("Vänligen godkänd geolocation access");
-    } else {
-        alert("Kan inte hämta nuvarande plats");
-    }
-}
