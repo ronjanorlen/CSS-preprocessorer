@@ -1,28 +1,31 @@
 "use strict";
 
-// Karta med start på nollställda koordinater för att istället hämta användarens plats med geolocation
-let map = L.map('map').setView([0, 0], 13);
-
-// Visa karta
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 14,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+// Variabler för kartan och markören
+let map;
+let marker;
 
 // Hämta användarens plats och markera var den befinner sig, lyckad eller inte 
-navigator.geolocation.watchPosition(success, error);
-let marker;
+navigator.geolocation.getCurrentPosition(success, error);
 
 // Funktion för lyckad hämtning av användarens plats
 function success(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
 
-    marker = L.marker([lat, lon]).addTo(map); 
-    map.setView([lat, lon]);
+    // Skapa en ny karta med start på användarens nuvarande plats
+    map = L.map('map').setView([lat, lon], 13);
+
+    // Visa karta
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Placera markören på användarens plats
+    marker = L.marker([lat, lon]).addTo(map);
 }
 
-//Funktion om hämtning av användarens plats ej lyckas
+// Funktion om hämtning av användarens plats ej lyckas
 function error(err) {
     if (err.code === 1) {
         alert("Vänligen godkänd geolocation access");
@@ -30,6 +33,7 @@ function error(err) {
         alert("Kan inte hämta nuvarande plats");
     }
 }
+
 
 // Variabler för sökruta
 const searchBox = document.getElementById('search'); 
