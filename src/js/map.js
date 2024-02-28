@@ -95,7 +95,7 @@ function showLocation(data) {
 // Funktion för att flytta markören till vald plats
 function moveMarker(lat, long) {
 
-    // Ta bort befintlig markör om det finns en
+    // Ta bort befintlig markör
     if (marker) {
         map.removeLayer(marker);
     }
