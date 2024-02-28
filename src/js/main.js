@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("Test av JavaScript");
-
 // Hämta in meny-knappar
 let openBtn = document.getElementById("open-menu");
 let closeBtn = document.getElementById("close-menu");
